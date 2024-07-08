@@ -1,3 +1,4 @@
+import { testLib } from '@test-nx/test-lib';
 import './global.css';
 
 export const metadata = {
@@ -10,8 +11,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const title = testLib();
+
   return (
     <html lang="en">
+      <title>{title}</title>
       <body>{children}</body>
     </html>
   );

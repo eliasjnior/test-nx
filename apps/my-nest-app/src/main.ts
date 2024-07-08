@@ -7,8 +7,13 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
+import { testLib } from '@test-nx/test-lib';
 
 async function bootstrap() {
+  const test = testLib();
+
+  console.log({test});
+
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
